@@ -4,8 +4,8 @@ import { StringSession } from "telegram/sessions";
 import { NewMessage } from "telegram/events";
 import { _parseMessageText } from "telegram/client/messageParse";
 
-import { transformText } from "./src/main";
-import { sanitizedConfig } from "./src/config";
+import { transformText } from "./core/main";
+import { sanitizedConfig } from "./config";
 
 const config = sanitizedConfig;
 

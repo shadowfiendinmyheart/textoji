@@ -1,4 +1,6 @@
-import { EmojiMap } from "./types";
+import { Alphabet } from "../types/types";
+
+export type EmojiMap = { [key in Alphabet]?: string };
 
 export const simpleEmojiMap: EmojiMap = {
   q: "🅠",

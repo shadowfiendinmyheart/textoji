@@ -25,6 +25,7 @@ export type EngAlphabet =
   | "b"
   | "n"
   | "m";
+
 export type RuAlphabet =
   | "й"
   | "ц"
@@ -59,8 +60,7 @@ export type RuAlphabet =
   | "б"
   | "ю"
   | "ё";
+
 export type Symbols = " " | "." | "," | "!" | "?" | ":";
 export type Numbers = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "0";
 export type Alphabet = EngAlphabet | RuAlphabet | Symbols | Numbers;
-
-export type EmojiMap = { [key in Alphabet]?: string };

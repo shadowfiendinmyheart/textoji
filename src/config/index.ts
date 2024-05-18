@@ -1,0 +1,1 @@
+export { sanitizedConfig } from './config'

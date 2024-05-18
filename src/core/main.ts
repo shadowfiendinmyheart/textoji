@@ -1,9 +1,9 @@
-import { simpleAnimatedEmojiMap } from "./emojiMap";
-import { Alphabet } from "./types";
+import { simpleAnimatedEmojiMap, simpleEmojiMap } from "../maps/emojiMap";
+import { Alphabet } from "../types/types";
 
 export const transformText = (text: string) => {
   const splittedText = text.toLowerCase().split("");
-  const emojiMap = simpleAnimatedEmojiMap;
+  const emojiMap = simpleEmojiMap;
   const transformedText: string[] = [];
   splittedText.forEach((char: string) => {
     const emojiChar = emojiMap[char as Alphabet];
