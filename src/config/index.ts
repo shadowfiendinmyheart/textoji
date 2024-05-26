@@ -1,1 +1,1 @@
-export { sanitizedConfig } from './config'
+export { sanitizedConfig } from "./config";

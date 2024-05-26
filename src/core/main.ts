@@ -1,8 +1,10 @@
-import { simpleAnimatedEmojiMap, simpleEmojiMap } from "../maps/emojiMap";
+import { simpleEmojiMap } from "../maps/emojiMap";
 import { Alphabet } from "../types/types";
 
-export const transformText = (text: string) => {
-  const splittedText = text.toLowerCase().split("");
+export const transformText = (text: string, isCaseSensitive: boolean = false) => {
+  const splittedText = isCaseSensitive
+    ? text.split("")
+    : text.toLowerCase().split("");
   const emojiMap = simpleEmojiMap;
   const transformedText: string[] = [];
   splittedText.forEach((char: string) => {
