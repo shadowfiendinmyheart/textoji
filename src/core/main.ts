@@ -5,6 +5,7 @@ export const transformText = (text: string, isCaseSensitive: boolean = false) =>
   const splittedText = isCaseSensitive
     ? text.split("")
     : text.toLowerCase().split("");
+
   const emojiMap = simpleEmojiMap;
   const transformedText: string[] = [];
   splittedText.forEach((char: string) => {
