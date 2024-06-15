@@ -1,8 +1,8 @@
 import { Alphabet } from "../types/types";
 
-export type EmojiMap = { [key in Alphabet]?: string };
+export type AlphabetMap = { [key in Alphabet]?: string };
 
-export const simpleEmojiMap: EmojiMap = {
+export const simpleAlphabetMap: AlphabetMap = {
   q: "🅠",
   w: "🅦",
   e: "🅔",
@@ -63,7 +63,7 @@ export const simpleEmojiMap: EmojiMap = {
   ю: "ю҉",
 };
 
-export const simpleAnimatedEmojiMap: EmojiMap = {
+export const simpleAnimatedAlphabetMap: AlphabetMap = {
   й: "![🤩](tg://emoji?id=5379820883294570158)",
   ц: "![🤩](tg://emoji?id=5380055955444617285)",
   у: "![🤩](tg://emoji?id=5379620080688581381)",
