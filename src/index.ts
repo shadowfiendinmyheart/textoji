@@ -4,8 +4,10 @@ import { StringSession } from "telegram/sessions";
 import { NewMessage } from "telegram/events";
 import { _parseMessageText } from "telegram/client/messageParse";
 
-import { transformText } from "./core/main";
+import { ComposerTransformer } from "./core/transformers/composerTransformer";
 import { sanitizedConfig } from "./config";
+import { AlphabetTransformer } from "./core/transformers";
+import { simpleAlphabetMap } from "./maps/alphabetMap";
 
 const config = sanitizedConfig;
 
@@ -43,11 +45,15 @@ const rl = readline.createInterface({
       try {
         const inputChat = await event.getInputChat();
 
+        const alphabetTransformer = new AlphabetTransformer(simpleAlphabetMap);
+        const composerTransformer = new ComposerTransformer(alphabetTransformer);
+
         const oldMessage = event.message.message;
         const messageId = event.message.id;
+        const transformedMessage = composerTransformer.convert(oldMessage);
         const [newMessage, entities] = await _parseMessageText(
           client,
-          transformText(oldMessage),
+          transformedMessage,
           "markdownv2",
         );
         await client.invoke(
